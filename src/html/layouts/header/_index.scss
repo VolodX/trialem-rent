@@ -1,0 +1,39 @@
+.header {
+	background: #212223;
+	color: var(--c-white);
+}
+
+.header-top {
+	border-bottom: 0.0625rem solid var(--border-header);
+
+		&__inner {
+			display: flex;
+			justify-content: space-between;
+			padding: 12px 0;
+		}
+}
+
+.contact-info {
+	display: flex;
+	gap: 2.5rem;
+
+		&__link {
+			color: var(--c-lightgray);
+			&::before {
+				// color: var(--c-lightgray);
+			}
+		}
+}
+
+.header-bottom {
+
+		&__inner {
+		}
+}
+.nav {
+}
+.menu {
+
+		&__link {
+		}
+}

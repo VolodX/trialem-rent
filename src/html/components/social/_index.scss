@@ -1,0 +1,19 @@
+@use '../../../styles/mixins/' as *;
+
+.social {
+	display: flex;
+
+	&__link {
+		color: var(--c-lightgray);
+		&::before {
+			width: 0.875rem;
+			height: 0.875rem;
+		}
+
+		@include hover {
+			&::before {
+				background: var(--c-brand);
+			}
+		}
+	}
+}

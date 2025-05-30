@@ -1,0 +1,45 @@
+.icon {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+  &::before {
+    content: '';
+    width: 1.25rem;
+    height: 1.25rem;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: currentColor;
+  }
+}
+.icon-location {
+  &::before {
+    mask-image: var(--icon-location);
+  }
+}
+.icon-phone {
+  &::before {
+    mask-image: var(--icon-phone);
+  }
+}
+.icon-fb {
+  &::before {
+    mask-image: var(--icon-fb);
+  }
+}
+.icon-insta {
+  &::before {
+    mask-image: var(--icon-insta);
+  }
+}
+.icon-youtube {
+  &::before {
+    mask-image: var(--icon-youtube);
+  }
+}
+
+.icon-x {
+  &::before {
+    mask-image: var(--icon-x);
+  }
+}
