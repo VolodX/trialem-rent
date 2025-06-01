@@ -1,0 +1,30 @@
+@use '../../../styles/mixins/' as *;
+
+.btn {
+  display: block;
+  width: fit-content;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--c-brand);
+  border: 2px solid var(--c-brand);
+  border-radius: 2px;
+  color: var(--c-white);
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+	transition: 0.2s ease-in-out;
+
+  @include hover {
+    background-color: var(--c-white);
+    color: var(--c-brand);
+    border-color: var(--c-white);
+  }
+
+  &--border {
+    border-color: var(--c-gray);
+  }
+
+  &--white {
+    background: var(--c-white);
+    color: var(--c-gray);
+  }
+}

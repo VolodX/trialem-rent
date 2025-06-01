@@ -1,7 +1,8 @@
 import vituum from 'vituum';
 import posthtml from '@vituum/vite-plugin-posthtml';
 import postcss from '@vituum/vite-plugin-postcss';
-import { copyFileSync } from 'fs';
+import { copyFileSync, existsSync } from 'fs';
+import path from 'path';
 
 export default {
   plugins: [
@@ -9,69 +10,84 @@ export default {
     postcss(),
     posthtml({
       root: './src',
+      // Додай опції для кращої роботи з includes
+      options: {
+        plugins: {
+          include: {
+            root: './src'
+          }
+        }
+      }
     }),
-
+    
+    // Кращий HMR
     {
       name: 'custom-hmr',
       enforce: 'post',
       handleHotUpdate({ file, server }) {
-        if (file.endsWith('.html')) {
+        if (file.endsWith('.html') || file.endsWith('.scss')) {
           server.ws.send({
             type: 'full-reload',
             path: '*',
           });
         }
       },
-    }, 
+    },
+    
+    // Безпечніше копіювання файлів
     {
       name: 'copy-static-files',
       writeBundle() {
-        copyFileSync('src/android-chrome-192x192.png', 'dist/android-chrome-192x192.png');
-        copyFileSync('src/android-chrome-512x512.png', 'dist/android-chrome-512x512.png');
+        const filesToCopy = [
+          'src/android-chrome-192x192.png',
+          'src/android-chrome-512x512.png'
+        ];
+        
+        filesToCopy.forEach(file => {
+          if (existsSync(file)) {
+            const fileName = file.split('/').pop();
+            copyFileSync(file, `dist/${fileName}`);
+          }
+        });
       },
     },
   ],
 
+	// Додаємо resolve для алісу @
+  resolve: {
+    alias: {
+      '@': path.resolve('./src'), // Замість __dirname використовуємо відносний шлях
+    },
+  },
+
   build: {
-    root: './src',
     rollupOptions: {
       output: {
         assetFileNames: (asset) => {
-          const filePath = asset.name.split('/');
-          const fileName = filePath.pop();
-          const nestedPath = filePath.join('/');
-          const outputPath = `${
-            nestedPath ? nestedPath + '/' : ''
-          }[name][extname]`;
-
-          if (asset.name.includes('favicon') || asset.name.includes('apple-touch-icon') || asset.name.includes('android-chrome') ) {
-            return `${outputPath}`;
+          // Спрощена логіка для організації файлів
+          const ext = asset.name.split('.').pop();
+          
+          // Favicon та подібні файли в корінь
+          if (['ico', 'png', 'webmanifest'].includes(ext) && 
+              asset.name.includes('favicon') || asset.name.includes('android-chrome')) {
+            return '[name][extname]';
           }
-
-          console.log(`${asset} - ${asset.name} - ${asset.type}`);
-            console.dir(`${asset}`);
-
-          if (asset.type === 'asset') {
-            switch (asset.name.split('.').pop()) {
-              case 'css':
-                return `css/${outputPath}`;
-              case 'png':
-              case 'jpg':
-              case 'webp':
-              case 'svg':
-                return `images/${outputPath}`;
-              case 'woff2':
-                return `fonts/${outputPath}`;
-              case 'webmanifest':
-                return `${outputPath}`;
-              default:
-                return `other/${outputPath}`;
-            }
-          }
+          
+          // Організація за типами
+          const folders = {
+            css: 'css/',
+            js: 'js/',
+            png: 'images/',
+            jpg: 'images/',
+            webp: 'images/',
+            svg: 'images/',
+            woff2: 'fonts/'
+          };
+          
+          const folder = folders[ext] || 'assets/';
+          return `${folder}[name][extname]`;
         },
-        preserveModuleDirectories: true,
       }
     },
   },
 };
-

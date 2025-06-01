@@ -1,0 +1,26 @@
+// @use '../../../../styles/mixins/' as *;
+@use '@/styles/mixins/' as *;
+
+.hero {
+	background-color: transparent;
+  &__inner {
+		padding-top: 5.9375rem;
+		padding-bottom: 11.5625rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    margin-bottom: 3.125rem;
+  }
+
+  .text {
+    margin-bottom: 1.5625rem;
+		max-width: 19.375rem;
+  }
+}
+
+.content {
+}

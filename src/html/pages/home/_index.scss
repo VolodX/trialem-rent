@@ -1,0 +1,46 @@
+@use './hero/hero';
+@use './about/about';
+
+// .home-page {
+//   background-image: url('/src/assets/images/home/hero-bg.webp');
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: cover;
+//   background-position-y: -8.375rem;
+//   // background-position-y: -17vh;
+//   // background-attachment: scroll;
+//   .header {
+//     position: relative;
+//     z-index: 10;
+//     background-color: transparent;
+//   }
+// }
+
+.home-page {
+  // Фон тільки для верхньої частини сторінки
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+		// bottom: 0;
+    // Висота = приблизна висота header + hero
+    height: min(100dvh, 900px); 
+		// height: 100%;
+    background-image: url('/src/assets/images/home/hero-bg.webp');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+		background-position-y: -8.375rem;
+    z-index: -1; // Щоб не перекривав контент
+  }
+  
+  .header {
+    position: relative;
+    z-index: 10;
+    background-color: transparent;
+  }
+}

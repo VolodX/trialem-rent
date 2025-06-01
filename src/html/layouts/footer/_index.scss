@@ -1,0 +1,111 @@
+@use '../../../styles/mixins' as *;
+
+.footer {
+  background-image: url('/src/assets//images/footer-bg.webp');
+  @include bg-cover;
+  padding-top: 3.125rem;
+  padding-bottom: 1.25rem;
+
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 114%;
+  color: var(--c-white);
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  &__group {
+  }
+}
+
+.footer-details {
+  .logo {
+    display: block;
+    margin-bottom: 2.125rem;
+  }
+
+  &__text {
+    line-height: 143%;
+    margin-bottom: 1.25rem;
+  }
+}
+.insta-blog {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.625rem;
+  }
+
+  &__img {
+  }
+}
+.footer-title {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 178%;
+  text-transform: uppercase;
+  color: var(--c-white);
+  margin-bottom: 1.5rem;
+}
+.contacts {
+  &__list {
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 0.9375rem;
+    }
+  }
+  &__link {
+    transition: var(--tr-color);
+    @include hover {
+      color: var(--c-brand);
+    }
+  }
+  &__accent {
+    color: var(--c-brand);
+    font-weight: 700;
+  }
+}
+
+.subscribe {
+}
+.subscribe-form {
+  &__group {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(#fff, 0.6);
+    margin-bottom: 2.5rem;
+    border-radius: 0.375rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1.125rem;
+    outline: 0;
+    color: var(--c-white);
+  }
+
+  &__btn {
+    padding: 1.8125rem;
+    mask-image: var(--icon-email);
+    mask-position: center;
+    mask-size: 1.3125rem;
+    mask-repeat: no-repeat;
+    width: 1.3125rem;
+    height: 1rem;
+    background-color: var(--c-white);
+    transition: var(--tr-background);
+
+    @include hover {
+      background-color: var(--c-brand);
+    }
+  }
+}
+.copy {
+  padding-top: 2.5rem;
+  font-size: 0.75rem;
+  line-height: 117%;
+  color: var(--c-lightgray);
+}

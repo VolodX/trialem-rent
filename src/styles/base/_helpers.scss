@@ -1,5 +1,5 @@
-
-.sr-only { // visually-hidden
+.sr-only {
+  // visually-hidden
   display: block;
   width: 1px !important;
   height: 1px !important;
@@ -8,5 +8,21 @@
   overflow: hidden !important;
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
-  border: 0 !important
+  border: 0 !important;
+}
+
+.color-accent {
+  color: var(--c-brand);
+}
+
+.color-gray {
+  color: var(--c-lightgray);
+}
+
+.color-white {
+  color: var(--c-white);
+}
+
+.fw-700 {
+  font-weight: 700;
 }

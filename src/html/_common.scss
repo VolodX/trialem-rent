@@ -1,7 +1,7 @@
 .icon {
   display: flex;
   gap: 0.625rem;
-  align-items: center;
+  // align-items: center;
   &::before {
     content: '';
     width: 1.25rem;
@@ -10,6 +10,7 @@
     mask-repeat: no-repeat;
     mask-position: center;
     background-color: currentColor;
+    transition: background-color 0.3s ease-in-out;
   }
 }
 .icon-location {
@@ -42,4 +43,26 @@
   &::before {
     mask-image: var(--icon-x);
   }
+}
+
+.title {
+  font-family: var(--ff-secondary);
+  font-size: 3.875rem;
+  line-height: 4.5625rem;
+  text-transform: uppercase;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 1.25rem;
+    height: 0.25rem;
+    background: var(--c-brand);
+    margin-bottom: 25px;
+  }
+}
+
+.text {
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 150%;
 }

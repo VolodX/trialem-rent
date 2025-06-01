@@ -1,4 +1,4 @@
-@use "../mixins"as*;
+@use '../mixins' as *;
 
 html,
 body {
@@ -10,21 +10,41 @@ body {
   font-family: var(--ff-primary);
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
-  color: var(--c-primary);
+  color: var(--c-white);
   background-color: var(--c-white);
-  min-width: 320px;
+  min-width: 20rem;
 }
 
 .container {
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 0.9375rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 75rem;
 }
 
 .wrapper {
   position: relative;
   overflow-x: hidden;
+  height: 100%;
+  min-height: 100svh;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr auto;
 }
+
+// Flex version of sticky footer
+// .wrapper {
+//   position: relative;
+//   overflow-x: hidden;
+//   height: 100%;
+//   min-height: 100svh;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// main {
+//   flex: 1;
+// }
