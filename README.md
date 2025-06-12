@@ -1,19 +1,19 @@
-# Збірка Vite.js + vituum
+# Vite.js + Vituum Build
 
-- Перед встановленням збірки перевірте, чи ви встановили node.js (LTS-версію)
-[завантажити nodejs з офіційного сайту](https://nodejs.org/en/download).
+🚧 **Website is currently under development (in progress)!** 🚧
 
-- Встановлення залежностей
-```
+This repository contains a Vite.js build setup with Vituum for efficient front-end development.
+
+## Getting Started
+
+### 1. Prerequisites
+
+Before setting up the build, ensure you have Node.js (LTS version) installed.
+[Download Node.js from the official website](https://nodejs.org/en/download).
+
+### 2. Install Dependencies
+
+Navigate to the project directory in your terminal and run:
+
+```bash
 npm install
-```
-
-- Запуск збірки/сервера
-```
-npx vite
-```
-
-- Збірка проєкта
-```
-npx vite build
-```
