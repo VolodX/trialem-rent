@@ -14,9 +14,9 @@
 	transition: 0.2s ease-in-out;
 
   @include hover {
-    background-color: var(--c-white);
-    color: var(--c-brand);
-    border-color: var(--c-white);
+    background-color: transparent;
+    color: var(--c-gray);
+    border-color: var(--c-gray);
   }
 
   &--border {
@@ -26,5 +26,10 @@
   &--white {
     background: var(--c-white);
     color: var(--c-gray);
+
+		@include hover {
+			border-color: var(--c-brand);
+			color: var(--c-brand)
+		}
   }
 }

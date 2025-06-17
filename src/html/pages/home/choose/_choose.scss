@@ -1,0 +1,28 @@
+@use '@/styles/mixins/' as *;
+
+.choose-bike {
+  padding-block: 6.25rem;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 3.75rem;
+  }
+}
+
+.content {
+}
+
+.buttons {
+}
+
+.bikes-list {
+  display: flex;
+  gap: 1.625rem;
+
+  &__item {
+  }
+}

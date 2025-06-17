@@ -1,0 +1,58 @@
+.bike-card {
+  color: var(--c-primary);
+  background-color: var(--c-white);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+
+  &__image {
+    margin-bottom: 2.625rem;
+  }
+
+  &__img {
+  }
+
+  &__content {
+    padding-inline: 0.875rem;
+  }
+
+  &__title {
+    font-weight: 500;
+    line-height: 119%;
+    color: #353637;
+    margin-bottom: 0.1875rem;
+  }
+
+  &__label {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 142%;
+    letter-spacing: 0.03em;
+    color: #62656a;
+    margin-bottom: 0.625rem;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_price {
+    font-size: 18px;
+    line-height: 89%;
+    color: #353637;
+  }
+
+  &_cost {
+    font-weight: 700;
+  }
+
+  &__btn {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 114%;
+    text-transform: uppercase;
+    color: var(--c-brand);
+  }
+}

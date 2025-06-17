@@ -1,0 +1,47 @@
+<section class="choose-bike">
+  <div class="container choose-bike__inner">
+    <div class="content">
+      <h2 class="title color-black choose-bike__title">
+        Choose<br />
+        you bike
+      </h2>
+
+      <div class="buttons">
+        <a href="/bicycles.html" class="btn">View more</a>
+      </div>
+    </div>
+
+    <ul class="bikes-list">
+      <li class="bikes-list__item">
+        <include
+          src="html/components/bike-card/_index.html"
+          locals='{
+						 "bikeImageName": "p-1", 
+						 "bikeName": "Mountain bike “Storm”", 
+						 "bikeLabel": "Exclusive choise", 
+						 "bikePrice": "16.00" }'
+        ></include>
+      </li>
+      <li class="bikes-list__item">
+        <include
+          src="html/components/bike-card/_index.html"
+          locals='{
+						 "bikeImageName": "p-2", 
+						 "bikeName": "Mountain bike “Storm”", 
+						 "bikeLabel": "Exclusive choise", 
+						 "bikePrice": "16.00" }'
+        ></include>
+      </li>
+      <li class="bikes-list__item">
+        <include
+          src="html/components/bike-card/_index.html"
+          locals='{
+						 "bikeImageName": "p-3", 
+						 "bikeName": "Mountain bike “Storm”", 
+						 "bikeLabel": "Exclusive choise", 
+						 "bikePrice": "16.00" }'
+        ></include>
+      </li>
+    </ul>
+  </div>
+</section>

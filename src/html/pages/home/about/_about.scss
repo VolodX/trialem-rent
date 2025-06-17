@@ -1,0 +1,29 @@
+.about {
+  &__inner {
+		display: flex;
+		justify-content: flex-end;
+		padding-block: 10.625rem;
+
+		background-image: url('/src/assets/images/home/about-bg.webp');
+		background-repeat: no-repeat;
+		background-position: left center;
+  }
+
+	.content {
+		max-width: 29.375rem;
+}
+
+  .title {
+    margin-bottom: 3.125rem;
+  }
+
+  .text {
+    margin-bottom: 1.5625rem;
+  }
+
+	.buttons {
+		display: flex;
+		gap: 0.625rem;
+}
+
+}

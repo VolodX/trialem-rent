@@ -1,0 +1,28 @@
+{
+  "priceCards": [
+    {
+      "iconClass": "icon-alarm",
+      "title": "4 Hours",
+      "price": "($12)",
+      "description": "You can rent a bike for 4 hours and enjoy your riding around the city."
+    },
+    {
+      "iconClass": "icon-time",
+      "title": "1 Day", 
+      "price": "($20)",
+      "description": "Facer pertinax salutandi quo nec elit utinam fierent, virtute dosent a reprimique suscipiantur."
+    },
+    {
+      "iconClass": "icon-sandclock",
+      "title": "1 Week",
+      "price": "($78)", 
+      "description": "There is an option to rent a bike for 1 week and learn the all corners of the city."
+    },
+    {
+      "iconClass": "icon-calendar",
+      "title": "1 Month",
+      "price": "($299)",
+      "description": "We provide an opportunity to rent a bike for 1 month and be a real city resident."
+    }
+  ]
+}
